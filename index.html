@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Protégée</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        input {
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #error {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Page Sécurisée</h2>
+        <div id="passwordForm">
+            <input type="password" id="passwordInput" placeholder="Entrez le mot de passe">
+            <br>
+            <button onclick="verifyPassword()">Accéder</button>
+            <p id="error">Mot de passe incorrect</p>
+        </div>
+    </div>
+
+    <script>
+        function verifyPassword() {
+            const password = document.getElementById('passwordInput').value;
+            const correctPassword = "123456"; // Changez ce mot de passe
+
+            if (password === correctPassword) {
+                // Remplacez cette URL par votre lien final
+                window.location.href = "https://gamma.app/docs/Cloud-Computing-zrfywkdzi43gevw";
+            } else {
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('passwordInput').value = '';
+            }
+        }
+
+        // Permet de valider avec la touche Enter
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                verifyPassword();
+            }
+        });
+    </script>
+</body>
+</html>
